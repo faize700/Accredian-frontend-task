@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Box, Button, Modal, TextField, Typography } from '@mui/material';
 import axios from 'axios';
-const BASE_URL = process.env.BASE_URL;
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
+
 
 const style = {
   position: 'absolute',
@@ -39,6 +41,8 @@ const ReferralModal = ({ open, onClose }) => {
       console.error("There was an error submitting the form!", error);
     }
   };
+
+  console.log(BASE_URL);
 
   return (
     <Modal open={open} onClose={onClose}>
